@@ -9,6 +9,7 @@
 
 <body>
     <script>
+        
 
         function getComputerChoice() {
             const computerChoice = ['rock', 'paper', 'scissors']
@@ -19,6 +20,7 @@
         let computerSelection = getComputerChoice()
         let pWins = 0;
         let cWins = 0;
+        let drawCounts = 0;
 
 
         function playGame(computerSelection, playerSelection) {
@@ -40,22 +42,25 @@
 
             }
             else {
-                return document.write("It's a draw")
+
+                // return document.write("It's a draw");
+                drawCounts++;
             }
 
         }
 
         function gameLoop() {
-            for (let index = 0; index < 5; index++) {
+            for (let index = 0; index <2; index++) {
                 let playerSelection = prompt("Enter your play (rock,paper or scissors)").toLowerCase()
 
                 playGame(computerSelection, playerSelection)
 
 
             }
+            return "<br>Thank you for playing </br>"+ " Wins:"+ pWins +"<p>Lost: </p>"+cWins+" Draw: "+drawCounts
 
         }
-        gameLoop()
+        document.write(gameLoop())
 
     </script>
 </body>
