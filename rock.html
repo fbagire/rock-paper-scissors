@@ -30,7 +30,6 @@
                 (playerSelection === 'paper' && computerSelection === 'rock')
             ) {
                 return pWins++;
-                // return document.write("You won " + playerSelection + " beats " + computerSelection)
 
             } else if (
                 (computerSelection === 'rock' && playerSelection === 'scissors') ||
@@ -38,12 +37,10 @@
                 (computerSelection === 'paper' && playerSelection === 'rock')
             ) {
                 return cWins++
-                // return document.write("You lost " + computerSelection + " beats " + playerSelection)
 
             }
             else {
 
-                // return document.write("It's a draw");
                 drawCounts++;
             }
 
@@ -57,7 +54,7 @@
 
 
             }
-            return "<br>Thank you for playing </br>"+ " Wins:"+ pWins +"<p>Lost: </p>"+cWins+" Draw: "+drawCounts
+            return "Thank you for playing <br>"+ " Wins:"+ pWins +"<br>"+ "Lost: "+cWins+"<br>"+" Draw: "+drawCounts
 
         }
         document.write(gameLoop())
