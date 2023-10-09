@@ -1,13 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <script>
-        
+
+        function getComputerChoice() {
+            const computerChoice = ['rock', 'paper', 'scissors']
+            let randNum = Math.round(Math.random() * 2)
+            return computerChoice[randNum]
+        }
+
+        let computerSelection = getComputerChoice()
+        let pWins = 0;
+        let cWins = 0;
+
+
+        function playGame(computerSelection, playerSelection) {
+            if (
+                (playerSelection === 'rock' && computerSelection === 'scissors') ||
+                (playerSelection === 'scissors' && computerSelection === 'paper') ||
+                (playerSelection === 'paper' && computerSelection === 'rock')
+            ) {
+                return pWins++;
+                // return document.write("You won " + playerSelection + " beats " + computerSelection)
+
+            } else if (
+                (computerSelection === 'rock' && playerSelection === 'scissors') ||
+                (computerSelection === 'scissors' && playerSelection === 'paper') ||
+                (computerSelection === 'paper' && playerSelection === 'rock')
+            ) {
+                return cWins++
+                // return document.write("You lost " + computerSelection + " beats " + playerSelection)
+
+            }
+            else {
+                return document.write("It's a draw")
+            }
+
+        }
+
+        function gameLoop() {
+            for (let index = 0; index < 5; index++) {
+                let playerSelection = prompt("Enter your play (rock,paper or scissors)").toLowerCase()
+
+                playGame(computerSelection, playerSelection)
+
+
+            }
+
+        }
+        gameLoop()
+
     </script>
 </body>
+
 </html>
