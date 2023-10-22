@@ -8,19 +8,28 @@
 </head>
 
 <body>
+
+    <div id="btnPlays">
+        <button id="rock" type="button">ROCK</button>
+        <button id="paper" type="button">PAPER</button>
+        <button id="scissors" type="button">SCISSORS</button>
+    </div>
+
+
+
+
     <script>
-        
+        let pWins = 0;
+        let cWins = 0;
+        let drawCounts = 0;
+        let playerSelection;
+
 
         function getComputerChoice() {
             const computerChoice = ['rock', 'paper', 'scissors']
             let randNum = Math.round(Math.random() * 2)
             return computerChoice[randNum]
         }
-
-        let computerSelection = getComputerChoice()
-        let pWins = 0;
-        let cWins = 0;
-        let drawCounts = 0;
 
 
         function playGame(computerSelection, playerSelection) {
@@ -44,20 +53,47 @@
                 drawCounts++;
             }
 
-        }
+        };
 
-        function gameLoop() {
-            for (let index = 0; index <5; index++) {
-                let playerSelection = prompt("Enter your play (rock,paper or scissors)").toLowerCase()
+        const btnplays = document.getElementById("btnPlays");
 
-                playGame(computerSelection, playerSelection)
 
+        btnplays.addEventListener('click', function playRound(e) {
+
+            switch (e.target.id) {
+                case "rock":
+                    playerSelection = "rock";
+                    break;
+                case "paper":
+                    playerSelection = "paper";
+                    break;
+                case "scissors":
+                    playerSelection = "scissors";
+                    break;
 
             }
-            return "Thank you for playing <br>"+ " Wins:"+ pWins +"<br>"+ "Lost: "+cWins+"<br>"+" Draw: "+drawCounts
+            let computerSelection = getComputerChoice();
 
-        }
-        document.write(gameLoop())
+
+            playGame(computerSelection, playerSelection)
+            if (cWins == 5) {
+                console.log('Computer won');
+                pWins = 0;
+                cWins = 0;
+                drawCounts = 0;
+            } else if (pWins == 5) {
+                console.log('You won');
+                pWins = 0;
+                cWins = 0;
+                drawCounts = 0;
+            }
+
+
+
+
+        });
+
+
 
     </script>
 </body>
