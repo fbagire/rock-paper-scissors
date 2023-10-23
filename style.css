@@ -1,0 +1,30 @@
+.divResult {
+    display: flex;
+    /* color: aquamarine; */
+}
+
+.headingDisplay {
+    display: flex;
+    justify-content: center;
+}
+
+.headingDisplay div {
+    display: flex;
+    width: 500px;
+    background-color: blanchedalmond;
+
+}
+
+.inline-paragraph {
+    background: rgb(66, 206, 190);
+    border: 4px solid rgb(45, 4, 4);
+    border-radius: 20%;
+    height: 50px;
+    flex: 1;
+}
+
+.inline-paragraph p {
+    display: flex;
+    text-align: center;
+
+}

@@ -4,98 +4,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>ROCKPAPERSCISSORS</title>
 </head>
 
 <body>
+    <div class="headingDisplay">
+        <div>
+            It's Time for a Showdown of Strategy and Fate! In this game of Rock, Paper, Scissors, you take the helm as
+            Player 1, pitted against the AI brilliance of Player 2, the computer. Let's see who emerges victorious in
+            this
+            thrilling battle of wits!
+        </div>
+
+
+    </div>
 
     <div id="btnPlays">
         <button id="rock" type="button">ROCK</button>
         <button id="paper" type="button">PAPER</button>
         <button id="scissors" type="button">SCISSORS</button>
     </div>
+    <div id="divResult" class="divResult">
+
+    </div>
 
 
 
-
-    <script>
-        let pWins = 0;
-        let cWins = 0;
-        let drawCounts = 0;
-        let playerSelection;
-
-
-        function getComputerChoice() {
-            const computerChoice = ['rock', 'paper', 'scissors']
-            let randNum = Math.round(Math.random() * 2)
-            return computerChoice[randNum]
-        }
-
-
-        function playGame(computerSelection, playerSelection) {
-            if (
-                (playerSelection === 'rock' && computerSelection === 'scissors') ||
-                (playerSelection === 'scissors' && computerSelection === 'paper') ||
-                (playerSelection === 'paper' && computerSelection === 'rock')
-            ) {
-                return pWins++;
-
-            } else if (
-                (computerSelection === 'rock' && playerSelection === 'scissors') ||
-                (computerSelection === 'scissors' && playerSelection === 'paper') ||
-                (computerSelection === 'paper' && playerSelection === 'rock')
-            ) {
-                return cWins++
-
-            }
-            else {
-
-                drawCounts++;
-            }
-
-        };
-
-        const btnplays = document.getElementById("btnPlays");
-
-
-        btnplays.addEventListener('click', function playRound(e) {
-
-            switch (e.target.id) {
-                case "rock":
-                    playerSelection = "rock";
-                    break;
-                case "paper":
-                    playerSelection = "paper";
-                    break;
-                case "scissors":
-                    playerSelection = "scissors";
-                    break;
-
-            }
-            let computerSelection = getComputerChoice();
-
-
-            playGame(computerSelection, playerSelection)
-            if (cWins == 5) {
-                console.log('Computer won');
-                pWins = 0;
-                cWins = 0;
-                drawCounts = 0;
-            } else if (pWins == 5) {
-                console.log('You won');
-                pWins = 0;
-                cWins = 0;
-                drawCounts = 0;
-            }
-
-
-
-
-        });
-
-
-
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
