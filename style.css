@@ -1,3 +1,7 @@
+html{
+    background-color: rgb(176, 209, 218);
+
+}
 .divResult {
     display: flex;
     /* color: aquamarine; */
@@ -11,7 +15,7 @@
 .headingDisplay div {
     display: flex;
     width: 500px;
-    background-color: blanchedalmond;
+    /* background-color: blanchedalmond; */
 
 }
 
@@ -26,5 +30,15 @@
 .inline-paragraph p {
     display: flex;
     text-align: center;
+    font-family: 'Josefin Sans', 'PT Serif','Noto Serif',Roboto,'Open Sans';
 
+}
+
+.winnerBlock{
+    background-color: azure;
+}
+
+.resetBlock{
+    color: blueviolet;
+    height: 100px;
 }
